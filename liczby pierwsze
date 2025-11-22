@@ -1,0 +1,25 @@
+#include<iostream>
+
+using namespace std;
+int main()
+{
+    int liczba;
+    bool pierwsza = true;
+
+    cout << "podaj liczbe";
+    cin >> liczba;
+
+    if (liczba < 2 ){
+        pierwsza = false;
+    }
+    else {
+        for (int i = 2; i * i <= liczba; i++){
+            if (liczba % i== 0 ){
+                pierwsza = false;
+                break;
+            }
+        }
+    }
+    if (pierwsza) cout << "liczba jest pierwsza" << endl;
+    else cout << "liczba nie jest pierwsza " << endl;
+}
