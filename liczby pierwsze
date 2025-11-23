@@ -23,3 +23,39 @@ int main()
     if (pierwsza) cout << "liczba jest pierwsza" << endl;
     else cout << "liczba nie jest pierwsza " << endl;
 }
+
+#include <iostream>
+#include <iomanip>
+
+int main() {
+    const int N = 3;
+    double mat[N][N];
+
+    std::cout << "Wczytywanie macierzy " << N << "x" << N << " (wprowadzaj elementy wierszami):\n";
+
+    // Wczytanie macierzy
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < N; ++j) {
+            std::cout << "mat[" << i << "][" << j << "] = ";
+            std::cin >> mat[i][j];
+        }
+    }
+
+    // Wypisanie macierzy w formie tabeli
+    std::cout << "\nMacierz " << N << "x" << N << ":\n";
+    // naglowek kolumn (opcjonalnie)
+    std::cout << std::setw(8) << ""; // przesunięcie dla nagłówka wierszy
+    for (int j = 0; j < N; ++j)
+        std::cout << std::setw(8) << "Col " << j;
+    std::cout << '\n';
+
+    for (int i = 0; i < N; ++i) {
+        std::cout << std::setw(6) << "Row " << i;
+        for (int j = 0; j < N; ++j) {
+            std::cout << std::setw(8) << mat[i][j];
+        }
+        std::cout << '\n';
+    }
+
+    return 0;
+}
